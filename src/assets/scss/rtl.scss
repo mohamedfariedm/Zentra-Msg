@@ -1,0 +1,13 @@
+// 👇 These must come first to define variables like $grid-breakpoints
+@import "../scss/icons.scss";
+@import "../scss/config/material/bootstrap.scss";
+@import "../scss/config/material/app.scss";
+@import "../scss/config/material/custom.scss";
+@import "./shepherd.css";
+@import "./mermaid.min.css";
+
+// 👇 Now import RTL overrides (which depend on the above)
+@import "../scss/rtl/components-rtl";
+@import "../scss/rtl/layouts-rtl";
+@import "../scss/rtl/plugins-rtl";
+@import "../scss/rtl/pages-rtl";
