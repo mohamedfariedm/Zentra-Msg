@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Card, Col, Container, Row, Form, FormFeedback, Label, Input } from 'reactstrap';
+import logoLight from "../../../assets/images/zentra_logo_high_quality.png";
 
 import AuthSlider from '../authCarousel';
 
 //formik
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import LanguageDropdownRectangle from '../../../Components/Common/LanguageDropdownRectangle';
 
 const CoverPasswReset = () => {
     document.title = "Reset Password | Zentra Msg";
-let router=useNavigate();
+    let router = useNavigate();
     const validation = useFormik({
         enableReinitialize: true,
 
@@ -31,22 +33,27 @@ let router=useNavigate();
                 <div className="bg-overlay"></div>
                 <div className="auth-page-content overflow-hidden pt-lg-5">
                     <Container>
-                        <Row>
-                            <Col lg={12}>
+                        <Row className="justify-content-center">
+                            <Col lg={6}>
                                 <Card className="overflow-hidden">
                                     <Row className="justify-content-center g-0">
-                                        <AuthSlider />
+                                        {/* <AuthSlider /> */}
 
-                                        <Col lg={6}>
+                                        <Col lg={12}>
                                             <div className="p-lg-5 p-4">
-                                                <h5 className="text-primary">Forgot Password?</h5>
-                                                <p className="text-muted">Reset password with velzon</p>
-
+                                            <div className="text-center">
+                                                    <Link to="/dashboard" className="d-block">
+                                                        <img src={logoLight} alt="" height="120" />
+                                                    </Link>
+                                                </div>
+                                                <LanguageDropdownRectangle />
+                                              
+                                                
                                                 <div className="mt-2 text-center">
                                                     <lord-icon
                                                         src="https://cdn.lordicon.com/rhvddzym.json"
                                                         trigger="loop"
-                                                        colors="primary:#0ab39c"
+                                                        colors="primary:#19A075"
                                                         className="avatar-xl"
                                                         style={{ width: "120px", height: "120px" }}>
                                                     </lord-icon>
@@ -97,7 +104,7 @@ let router=useNavigate();
                         <Row>
                             <Col lg={12}>
                                 <div className="text-center">
-                                    <p className="mb-0">&copy; {new Date().getFullYear()} Velzon. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                    <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
                                 </div>
                             </Col>
                         </Row>

@@ -37,7 +37,7 @@ const RatingTemplate = () => {
                                                 <tr style={{fontFamily: "Roboto, sans-serif", fontSize: "14px", margin: 0}}>
                                                     <td className="content-wrap" style={{fontFamily: "Roboto, sans-serif", boxSizing: "border-box", color: "#495057",  fontSize: "14px", verticalAlign: "top", margin: 0, boxShadow: "0 3px 15px rgba(30,32,37,.06)", borderRadius: "7px", backgroundColor: "#fff", overflow: "hidden"}} valign="top">
                                                         <meta itemProp="name" content="Confirm Email" style={{fontFamily: "Roboto, sans-serif", boxSizing: "border-box", fontSize: "14px", margin: 0}} />
-                                                        <div style={{padding: "20px", boxSizing: "border-box", textAlign: "center", backgroundImage: "linear-gradient(to right, #4b38b3, #4b38b3)"}}>
+                                                        <div style={{padding: "20px", boxSizing: "border-box", textAlign: "center", backgroundImage: "linear-gradient(to right, #102F50, #102F50)"}}>
                                                             <h6 style={{fontFamily: "Roboto, sans-serif", margin: 0, fontSize: "15px", color: "#fff", textTransform: "uppercase"}}>FREE 1-2 day shipping on orders over $32</h6>
                                                         </div>
                                                         <div style={{padding: "20px", boxSizing: "border-box", textAlign: "center", borderBottom: "1px solid #e9ebec"}}>

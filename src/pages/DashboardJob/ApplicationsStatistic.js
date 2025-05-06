@@ -29,7 +29,7 @@ const ApplicationsStatistic = () => {
         show: false,
       },
     },
-    colors: ["#45cb85d9", "#4b38b3", "#007bff"],
+    colors: ["#19A075d9", "#102F50", "#007bff"],
 
     dataLabels: {
       enabled: false,

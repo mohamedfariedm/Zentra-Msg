@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Col, Container, Row, FormFeedback, Input, Button } from 'reactstrap';
+import { Card, Col, Container, Row, FormFeedback, Input, Button, Label } from 'reactstrap';
+import logoLight from "../../../assets/images/zentra_logo_high_quality.png";
 
 import AuthSlider from '../authCarousel';
 
 //formik
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import LanguageDropdownRectangle from '../../../Components/Common/LanguageDropdownRectangle';
 
 const CoverSignUp = () => {
     document.title = "Cover SignUp | Zentra Msg";
@@ -38,18 +40,20 @@ const CoverSignUp = () => {
                 <div className="bg-overlay"></div>
                 <div className="auth-page-content overflow-hidden pt-lg-5">
                     <Container>
-                        <Row>
-                            <Col lg={12}>
+                        <Row className='justify-content-center'>
+                            <Col lg={6}>
                                 <Card className="overflow-hidden m-0">
                                     <Row className="justify-content-center g-0">
-                                        <AuthSlider />
+                                        {/* <AuthSlider /> */}
 
-                                        <Col lg={6}>
+                                        <Col lg={12}>
                                             <div className="p-lg-5 p-4">
-                                                <div>
-                                                    <h5 className="text-primary">Register Account</h5>
-                                                    <p className="text-muted">Get your Free Velzon account now.</p>
+                                            <div className="text-center">
+                                                    <Link to="/dashboard" className="d-block">
+                                                        <img src={logoLight} alt="" height="120" />
+                                                    </Link>
                                                 </div>
+                                                <LanguageDropdownRectangle />
 
                                                 <div className="mt-4">
                                                     <form className="needs-validation" noValidate action="index">
@@ -92,8 +96,9 @@ const CoverSignUp = () => {
                                                             </div>
                                                         </div>
 
-                                                        <div className="mb-4">
-                                                            <p className="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Velzon <Link to="#" className="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</Link></p>
+                                                        <div className="form-check">
+                                                            <Input type="checkbox" className="form-check-input" id="auth-remember-check" />
+                                                            <Label className="form-check-label" htmlFor="auth-remember-check">I Agree to Terms & Conditions</Label>
                                                         </div>
 
                                                         <div id="password-contain" className="p-3 bg-light mb-2 rounded">
@@ -108,23 +113,21 @@ const CoverSignUp = () => {
                                                             <button className="btn btn-success w-100" type="submit">Sign Up</button>
                                                         </div>
 
-                                                        <div className="mt-4 text-center">
-                                                            <div className="signin-other-title">
-                                                                <h5 className="fs-13 mb-4 title text-muted">Create account with</h5>
-                                                            </div>
+                                                        
 
-                                                            <div>
-                                                                <button type="button" className="btn btn-primary btn-icon waves-effect waves-light me-1"><i className="ri-facebook-fill fs-16"></i></button>
-                                                                <button type="button" className="btn btn-danger btn-icon waves-effect waves-light me-1"><i className="ri-google-fill fs-16"></i></button>
-                                                                <button type="button" className="btn btn-dark btn-icon waves-effect waves-light me-1"><i className="ri-github-fill fs-16"></i></button>
-                                                                <button type="button" className="btn btn-info btn-icon waves-effect waves-light"><i className="ri-twitter-fill fs-16"></i></button>
-                                                            </div>
-                                                        </div>
                                                     </form>
                                                 </div>
 
                                                 <div className="mt-5 text-center">
                                                     <p className="mb-0">Already have an account ? <Link to="/auth-signin-cover" className="fw-semibold text-primary text-decoration-underline"> Signin</Link> </p>
+                                                    <div className="mt-3">
+                                                        <p className="mb-0 text-muted">
+                                                            By continuing, you're confirming that you've read our{' '}
+                                                            <Link to="/terms-and-conditions" className="text-decoration-underline">Terms & Conditions</Link>
+                                                            {' '}and{' '}
+                                                            <Link to="/privacy-policy" className="text-decoration-underline">Privacy Policy</Link>.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Col>
@@ -141,7 +144,7 @@ const CoverSignUp = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="text-center">
-                                    <p className="mb-0">{new Date().getFullYear()} Velzon. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                    <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
                                 </div>
                             </div>
                         </div>

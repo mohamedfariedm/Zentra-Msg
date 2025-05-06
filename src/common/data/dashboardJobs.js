@@ -20,7 +20,7 @@ const jobWidgets = [
     counter: "36894",
     separator: ",",
     series: [95],
-    color: "#45cb85d9",
+    color: "#19A075d9",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const jobWidgets = [
     counter: "28410",
     separator: ",",
     series: [97],
-    color: "#45cb85d9",
+    color: "#19A075d9",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const jobWidgets = [
     counter: "4305",
     separator: ",",
     series: [80],
-    color: "#45cb85d9",
+    color: "#19A075d9",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const jobWidgets = [
     counter: "3948",
     separator: ",",
     series: [64],
-    color: "#45cb85d9",
+    color: "#19A075d9",
   },
   {
     id: 6,

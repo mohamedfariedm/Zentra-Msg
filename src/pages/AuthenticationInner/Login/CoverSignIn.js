@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Col, Container, Input, Label, Row, Button, Form, FormFeedback, Alert, Spinner } from 'reactstrap';
 import AuthSlider from '../authCarousel';
+import logoLight from "../../../assets/images/zentra_logo_high_quality.png";
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { loginUser, socialLogin, resetLoginFlag } from '../../../slices/thunks';
 import withRouter from '../../../Components/Common/withRouter';
 import { createSelector } from 'reselect';
-import LanguageDropdown from '../../../Components/Common/LanguageDropdown';
+import LanguageDropdownRectangle from '../../../Components/Common/LanguageDropdownRectangle';
 
 const CoverSignIn = (props) => {
     const dispatch = useDispatch();
@@ -54,19 +56,21 @@ const CoverSignIn = (props) => {
         <React.Fragment>
             <div className="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
                 <div className="bg-overlay"></div>
-                <div className="auth-page-content overflow-hidden pt-lg-5">
+                <div className="auth-page-content d-flex align-items-center justify-content-center overflow-hidden pt-lg-5">
                     <Container>
-                        <Row>
-                            <Col lg={12}>
+                        <Row className="justify-content-center">
+                            <Col lg={6}>
                                 <Card className="overflow-hidden">
                                     <Row className="g-0">
-                                        <AuthSlider />
-                                        <Col lg={6}>
+                                        {/* <AuthSlider /> */}
+                                        <Col lg={12}>
                                             <div className="p-lg-5 p-4">
                                                 <div className="text-center">
-                                                    <h5 className="text-primary">Welcome Back !</h5>
-                                                    <p className="text-muted">Sign in to continue to Velzon.</p>
+                                                    <Link to="/dashboard" className="d-block">
+                                                        <img src={logoLight} alt="" height="120" />
+                                                    </Link>
                                                 </div>
+                                                <LanguageDropdownRectangle />
 
                                                 {error && <Alert color="danger">{error}</Alert>}
 
@@ -131,29 +135,20 @@ const CoverSignIn = (props) => {
                                                         </div>
 
                                                     </Form>
-                                                    <div className='mt-4 text-center'>
 
-                                                            <div className="signin-other-title">
-                                                                <h5 className="fs-13 mb-4 title"> Change Language </h5>
-                                                            </div>
-                                                    </div>
-                                                        <div style={{scale:"1.1",position:"relative",zIndex:"10000000000"}} className=" text-center w-100 d-flex justify-content-center align-items-start">
-                                                            <LanguageDropdown  />
-                                                            {/* <div>
-                                                                <Button color="primary" className="btn-icon me-1" onClick={() => dispatch(socialLogin("facebook", props.router.navigate))}>
-                                                                    <i className="ri-facebook-fill fs-16" />
-                                                                </Button>
-                                                                <Button color="danger" className="btn-icon me-1" onClick={() => dispatch(socialLogin("google", props.router.navigate))}>
-                                                                    <i className="ri-google-fill fs-16" />
-                                                                </Button>
-                                                                <Button color="dark" className="btn-icon"><i className="ri-github-fill fs-16" /></Button>
-                                                                <Button color="info" className="btn-icon"><i className="ri-twitter-fill fs-16" /></Button>
-                                                            </div> */}
-                                                        </div>
+
                                                 </div>
 
                                                 <div className="mt-5 text-center">
                                                     <p className="mb-0">Don't have an account ? <Link to="/auth-signup-cover" className="fw-semibold text-primary text-decoration-underline"> Signup</Link></p>
+                                                    <div className="mt-3">
+                                                        <p className="mb-0 text-muted">
+                                                            By continuing, you're confirming that you've read our{' '}
+                                                            <Link to="/terms-and-conditions" className="text-decoration-underline">Terms & Conditions</Link>
+                                                            {' '}and{' '}
+                                                            <Link to="/privacy-policy" className="text-decoration-underline">Privacy Policy</Link>.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Col>
@@ -168,7 +163,7 @@ const CoverSignIn = (props) => {
                         <Row>
                             <Col lg={12}>
                                 <div className="text-center">
-                                    <p className="mb-0">&copy; {new Date().getFullYear()} Velzon. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
                                 </div>
                             </Col>
                         </Row>

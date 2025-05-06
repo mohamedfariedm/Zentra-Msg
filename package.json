@@ -91,8 +91,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build:rtl": "sass -I node_modules src/assets/scss/rtl.scss public/rtl.css",
-    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "build:rtl": "sass -I node_modules src/assets/scss/rtreact-scripts test",
     "eject": "react-scripts eject"
   },
   "browserslist": {

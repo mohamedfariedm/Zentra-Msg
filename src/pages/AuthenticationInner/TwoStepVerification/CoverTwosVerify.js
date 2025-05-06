@@ -30,12 +30,12 @@ const CoverTwosVerify = () => {
                 <div className="bg-overlay"></div>
                 <div className="auth-page-content overflow-hidden pt-lg-5">
                     <Container>
-                        <Row>
-                            <Col lg={12}>
+                        <Row className="justify-content-center">
+                            <Col lg={6}>
                                 <Card className="overflow-hidden">
                                     <Row className="justify-content-center g-0">
-                                        <AuthSlider />
-                                        <Col lg={6}>
+                                        {/* <AuthSlider /> */}
+                                        <Col lg={12}>
                                             <div className="p-lg-5 p-4">
                                                 <div className="mb-4">
                                                     <div className="avatar-lg mx-auto">
@@ -117,7 +117,7 @@ const CoverTwosVerify = () => {
                         <Row>
                             <Col lg={12}>
                                 <div className="text-center">
-                                    <p className="mb-0">&copy; {new Date().getFullYear()} Velzon. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                    <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
                                 </div>
                             </Col>
                         </Row>

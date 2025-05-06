@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.full-width-rectangle {
+  width: 100%;
+  border-radius: 0; /* Make it rectangle */
+  text-align: left;  /* Align text to the left */
+  padding: 10px; /* Adjust padding as necessary */
+}
+
+.language-name {
+  flex-grow: 1; /* Takes up all available space */
+}
+
+.flag-image {
+  position: absolute;
+  left: 10px; /* Adjust this to position flag */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure flag stays behind text */
+}
+
+.notify-item {
+  display: flex;
+  align-items: center;
+}
+
+.notify-item .flag-image {
+  margin-right: 8px;
+}
+
