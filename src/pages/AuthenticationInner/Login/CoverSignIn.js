@@ -11,8 +11,10 @@ import { loginUser, socialLogin, resetLoginFlag } from '../../../slices/thunks';
 import withRouter from '../../../Components/Common/withRouter';
 import { createSelector } from 'reselect';
 import LanguageDropdownRectangle from '../../../Components/Common/LanguageDropdownRectangle';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 
 const CoverSignIn = (props) => {
+    const { t } = useTranslation(); // Destructure the t function from useTranslation
     const dispatch = useDispatch();
     const selectLayoutState = (state) => state;
     const loginpageData = createSelector(
@@ -33,8 +35,8 @@ const CoverSignIn = (props) => {
             password: '123456',
         },
         validationSchema: Yup.object({
-            email: Yup.string().required('Please Enter Your Email'),
-            password: Yup.string().required('Please Enter Your Password'),
+            email: Yup.string().required(t('Please Enter Your Email')), // Use t() for translation
+            password: Yup.string().required(t('Please Enter Your Password')), // Use t() for translation
         }),
         onSubmit: (values) => {
             dispatch(loginUser(values, props.router.navigate));
@@ -50,7 +52,7 @@ const CoverSignIn = (props) => {
         }
     }, [dispatch, errorMsg]);
 
-    document.title = "Cover SignIn | Zentra Msg";
+    document.title = t('Cover SignIn | Zentra Msg'); // Translate the page title
 
     return (
         <React.Fragment>
@@ -77,12 +79,12 @@ const CoverSignIn = (props) => {
                                                 <div className="mt-4">
                                                     <Form onSubmit={validation.handleSubmit}>
                                                         <div className="mb-3">
-                                                            <Label htmlFor="email" className="form-label">Email</Label>
+                                                            <Label htmlFor="email" className="form-label">{t('Email')}</Label> {/* Translate label */}
                                                             <Input
                                                                 id="email"
                                                                 name="email"
                                                                 type="email"
-                                                                placeholder="Enter email"
+                                                                placeholder={t('Enter email')} // Use translation for placeholder
                                                                 onChange={validation.handleChange}
                                                                 onBlur={validation.handleBlur}
                                                                 value={validation.values.email}
@@ -95,15 +97,15 @@ const CoverSignIn = (props) => {
 
                                                         <div className="mb-3">
                                                             <div className="float-end">
-                                                                <Link to="/auth-pass-reset-cover" className="text-muted">Forgot password?</Link>
+                                                                <Link to="/auth-pass-reset-cover" className="text-muted">{t('Forgot password?')}</Link> {/* Translate text */}
                                                             </div>
-                                                            <Label htmlFor="password" className="form-label">Password</Label>
+                                                            <Label htmlFor="password" className="form-label">{t('Password')}</Label> {/* Translate label */}
                                                             <div className="position-relative auth-pass-inputgroup mb-3">
                                                                 <Input
                                                                     id="password"
                                                                     name="password"
                                                                     type={showPassword ? "text" : "password"}
-                                                                    placeholder="Enter password"
+                                                                    placeholder={t('Enter password')} // Use translation for placeholder
                                                                     onChange={validation.handleChange}
                                                                     onBlur={validation.handleBlur}
                                                                     value={validation.values.password}
@@ -125,28 +127,26 @@ const CoverSignIn = (props) => {
 
                                                         <div className="form-check">
                                                             <Input type="checkbox" className="form-check-input" id="auth-remember-check" />
-                                                            <Label className="form-check-label" htmlFor="auth-remember-check">Remember me</Label>
+                                                            <Label className="form-check-label" htmlFor="auth-remember-check">{t('Remember me')}</Label> {/* Translate text */}
                                                         </div>
 
                                                         <div className="mt-4">
                                                             <Button color="success" disabled={loading} className="w-100" type="submit">
-                                                                {loading && <Spinner size="sm" className="me-2" />} Sign In
+                                                                {loading && <Spinner size="sm" className="me-2" />} {t('Sign In')} {/* Translate button text */}
                                                             </Button>
                                                         </div>
 
                                                     </Form>
-
-
                                                 </div>
 
                                                 <div className="mt-5 text-center">
-                                                    <p className="mb-0">Don't have an account ? <Link to="/auth-signup-cover" className="fw-semibold text-primary text-decoration-underline"> Signup</Link></p>
+                                                    <p className="mb-0">{t("Don't have an account ?")} <Link to="/auth-signup-cover" className="fw-semibold text-primary text-decoration-underline">{t('Signup')}</Link></p> {/* Translate text */}
                                                     <div className="mt-3">
                                                         <p className="mb-0 text-muted">
-                                                            By continuing, you're confirming that you've read our{' '}
-                                                            <Link to="/terms-and-conditions" className="text-decoration-underline">Terms & Conditions</Link>
+                                                            {t('By continuing, you\'re confirming that you\'ve read our')}{' '}
+                                                            <Link to="/terms-and-conditions" className="text-decoration-underline">{t('Terms & Conditions')}</Link>
                                                             {' '}and{' '}
-                                                            <Link to="/privacy-policy" className="text-decoration-underline">Privacy Policy</Link>.
+                                                            <Link to="/privacy-policy" className="text-decoration-underline">{t('Privacy Policy')}</Link>.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -163,7 +163,7 @@ const CoverSignIn = (props) => {
                         <Row>
                             <Col lg={12}>
                                 <div className="text-center">
-                                <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
+                                    <p className="mb-0">{t('©')} {new Date().getFullYear()} ZentraMsg. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by ZentraMsg Team')}</p>
                                 </div>
                             </Col>
                         </Row>

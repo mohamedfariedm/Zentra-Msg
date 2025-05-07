@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Container, Row } from 'reactstrap';
 
-//import images
+// import images
 import AuthSlider from '../authCarousel';
 
+// Formik
+import { useFormik } from 'formik';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
+
 const CoverTwosVerify = () => {
-    document.title = "Two Step Verification | Zentra Msg";
+    const { t } = useTranslation(); // Destructure the t() function to access translations
+    document.title = t('Two Step Verification | Zentra Msg'); // Translated page title
 
     const getInputElement = (index) => {
         return document.getElementById('digit' + index + '-input');
@@ -34,7 +39,6 @@ const CoverTwosVerify = () => {
                             <Col lg={6}>
                                 <Card className="overflow-hidden">
                                     <Row className="justify-content-center g-0">
-                                        {/* <AuthSlider /> */}
                                         <Col lg={12}>
                                             <div className="p-lg-5 p-4">
                                                 <div className="mb-4">
@@ -45,8 +49,8 @@ const CoverTwosVerify = () => {
                                                     </div>
                                                 </div>
                                                 <div className="text-muted text-center mx-lg-3">
-                                                    <h4 className="">Verify Your Email</h4>
-                                                    <p>Please enter the 4 digit code sent to <span className="fw-semibold">example@abc.com</span></p>
+                                                    <h4>{t('Verify Your Email')}</h4> {/* Translated title */}
+                                                    <p>{t('Please enter the 4 digit code sent to')} <span className="fw-semibold">example@abc.com</span></p> {/* Translated message */}
                                                 </div>
 
                                                 <div className="mt-4">
@@ -54,7 +58,7 @@ const CoverTwosVerify = () => {
                                                         <Row>
                                                             <Col className="col-3">
                                                                 <div className="mb-3">
-                                                                    <label htmlFor="digit1-input" className="visually-hidden">Digit 1</label>
+                                                                    <label htmlFor="digit1-input" className="visually-hidden">{t('Digit 1')}</label>
                                                                     <input type="text"
                                                                         className="form-control form-control-lg bg-light border-light text-center"
                                                                         maxLength="1"
@@ -64,7 +68,7 @@ const CoverTwosVerify = () => {
 
                                                             <Col className="col-3">
                                                                 <div className="mb-3">
-                                                                    <label htmlFor="digit2-input" className="visually-hidden">Digit 2</label>
+                                                                    <label htmlFor="digit2-input" className="visually-hidden">{t('Digit 2')}</label>
                                                                     <input type="text"
                                                                         className="form-control form-control-lg bg-light border-light text-center"
                                                                         maxLength="1"
@@ -74,7 +78,7 @@ const CoverTwosVerify = () => {
 
                                                             <Col className="col-3">
                                                                 <div className="mb-3">
-                                                                    <label htmlFor="digit3-input" className="visually-hidden">Digit 3</label>
+                                                                    <label htmlFor="digit3-input" className="visually-hidden">{t('Digit 3')}</label>
                                                                     <input type="text"
                                                                         className="form-control form-control-lg bg-light border-light text-center"
                                                                         maxLength="1"
@@ -84,7 +88,7 @@ const CoverTwosVerify = () => {
 
                                                             <Col className="col-3">
                                                                 <div className="mb-3">
-                                                                    <label htmlFor="digit4-input" className="visually-hidden">Digit 4</label>
+                                                                    <label htmlFor="digit4-input" className="visually-hidden">{t('Digit 4')}</label>
                                                                     <input type="text"
                                                                         className="form-control form-control-lg bg-light border-light text-center"
                                                                         maxLength="1"
@@ -94,7 +98,7 @@ const CoverTwosVerify = () => {
                                                         </Row>
 
                                                         <div className="mt-3">
-                                                            <Button color="success" className="w-100">Confirm</Button>
+                                                            <Button color="success" className="w-100">{t('Confirm')}</Button> {/* Translated button */}
                                                         </div>
 
                                                     </form>
@@ -102,7 +106,7 @@ const CoverTwosVerify = () => {
                                                 </div>
 
                                                 <div className="mt-5 text-center">
-                                                    <p className="mb-0">Didn't receive a code ? <Link to="/auth-pass-reset-cover" className="fw-semibold text-primary text-decoration-underline">Resend</Link> </p>
+                                                    <p className="mb-0">{t("Didn't receive a code ?")} <Link to="/auth-pass-reset-cover" className="fw-semibold text-primary text-decoration-underline">{t('Resend')}</Link> </p>
                                                 </div>
                                             </div>
                                         </Col>
@@ -117,7 +121,7 @@ const CoverTwosVerify = () => {
                         <Row>
                             <Col lg={12}>
                                 <div className="text-center">
-                                    <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. Crafted with <i className="mdi mdi-heart text-danger"></i> by ZentraMsg Team</p>
+                                    <p className="mb-0">© {new Date().getFullYear()} ZentraMsg. {t('Crafted with')} <i className="mdi mdi-heart text-danger"></i> {t('by ZentraMsg Team')}</p>
                                 </div>
                             </Col>
                         </Row>
